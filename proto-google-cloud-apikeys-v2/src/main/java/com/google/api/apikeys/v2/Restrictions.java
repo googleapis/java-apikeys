@@ -52,136 +52,6 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     return this.unknownFields;
   }
 
-  private Restrictions(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10:
-            {
-              com.google.api.apikeys.v2.BrowserKeyRestrictions.Builder subBuilder = null;
-              if (clientRestrictionsCase_ == 1) {
-                subBuilder =
-                    ((com.google.api.apikeys.v2.BrowserKeyRestrictions) clientRestrictions_)
-                        .toBuilder();
-              }
-              clientRestrictions_ =
-                  input.readMessage(
-                      com.google.api.apikeys.v2.BrowserKeyRestrictions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.api.apikeys.v2.BrowserKeyRestrictions) clientRestrictions_);
-                clientRestrictions_ = subBuilder.buildPartial();
-              }
-              clientRestrictionsCase_ = 1;
-              break;
-            }
-          case 18:
-            {
-              com.google.api.apikeys.v2.ServerKeyRestrictions.Builder subBuilder = null;
-              if (clientRestrictionsCase_ == 2) {
-                subBuilder =
-                    ((com.google.api.apikeys.v2.ServerKeyRestrictions) clientRestrictions_)
-                        .toBuilder();
-              }
-              clientRestrictions_ =
-                  input.readMessage(
-                      com.google.api.apikeys.v2.ServerKeyRestrictions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.api.apikeys.v2.ServerKeyRestrictions) clientRestrictions_);
-                clientRestrictions_ = subBuilder.buildPartial();
-              }
-              clientRestrictionsCase_ = 2;
-              break;
-            }
-          case 26:
-            {
-              com.google.api.apikeys.v2.AndroidKeyRestrictions.Builder subBuilder = null;
-              if (clientRestrictionsCase_ == 3) {
-                subBuilder =
-                    ((com.google.api.apikeys.v2.AndroidKeyRestrictions) clientRestrictions_)
-                        .toBuilder();
-              }
-              clientRestrictions_ =
-                  input.readMessage(
-                      com.google.api.apikeys.v2.AndroidKeyRestrictions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.api.apikeys.v2.AndroidKeyRestrictions) clientRestrictions_);
-                clientRestrictions_ = subBuilder.buildPartial();
-              }
-              clientRestrictionsCase_ = 3;
-              break;
-            }
-          case 34:
-            {
-              com.google.api.apikeys.v2.IosKeyRestrictions.Builder subBuilder = null;
-              if (clientRestrictionsCase_ == 4) {
-                subBuilder =
-                    ((com.google.api.apikeys.v2.IosKeyRestrictions) clientRestrictions_)
-                        .toBuilder();
-              }
-              clientRestrictions_ =
-                  input.readMessage(
-                      com.google.api.apikeys.v2.IosKeyRestrictions.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(
-                    (com.google.api.apikeys.v2.IosKeyRestrictions) clientRestrictions_);
-                clientRestrictions_ = subBuilder.buildPartial();
-              }
-              clientRestrictionsCase_ = 4;
-              break;
-            }
-          case 42:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                apiTargets_ = new java.util.ArrayList<com.google.api.apikeys.v2.ApiTarget>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              apiTargets_.add(
-                  input.readMessage(
-                      com.google.api.apikeys.v2.ApiTarget.parser(), extensionRegistry));
-              break;
-            }
-          default:
-            {
-              if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
-    } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        apiTargets_ = java.util.Collections.unmodifiableList(apiTargets_);
-      }
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.api.apikeys.v2.ResourcesProto
         .internal_static_google_api_apikeys_v2_Restrictions_descriptor;
@@ -572,7 +442,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < apiTargets_.size(); i++) {
       output.writeMessage(5, apiTargets_.get(i));
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -604,7 +474,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < apiTargets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, apiTargets_.get(i));
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -637,7 +507,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -672,7 +542,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -801,30 +671,34 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.api.apikeys.v2.Restrictions.newBuilder()
-    private Builder() {
-      maybeForceBuilderInitialization();
-    }
+    private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
-        getApiTargetsFieldBuilder();
-      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (browserKeyRestrictionsBuilder_ != null) {
+        browserKeyRestrictionsBuilder_.clear();
+      }
+      if (serverKeyRestrictionsBuilder_ != null) {
+        serverKeyRestrictionsBuilder_.clear();
+      }
+      if (androidKeyRestrictionsBuilder_ != null) {
+        androidKeyRestrictionsBuilder_.clear();
+      }
+      if (iosKeyRestrictionsBuilder_ != null) {
+        iosKeyRestrictionsBuilder_.clear();
+      }
       if (apiTargetsBuilder_ == null) {
         apiTargets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
+        apiTargets_ = null;
         apiTargetsBuilder_.clear();
       }
+      bitField0_ = (bitField0_ & ~0x00000001);
       clientRestrictionsCase_ = 0;
       clientRestrictions_ = null;
       return this;
@@ -995,7 +869,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -1010,17 +884,72 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.api.apikeys.v2.Restrictions parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                input.readMessage(
+                    getBrowserKeyRestrictionsFieldBuilder().getBuilder(), extensionRegistry);
+                clientRestrictionsCase_ = 1;
+                break;
+              } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getServerKeyRestrictionsFieldBuilder().getBuilder(), extensionRegistry);
+                clientRestrictionsCase_ = 2;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getAndroidKeyRestrictionsFieldBuilder().getBuilder(), extensionRegistry);
+                clientRestrictionsCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getIosKeyRestrictionsFieldBuilder().getBuilder(), extensionRegistry);
+                clientRestrictionsCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.api.apikeys.v2.ApiTarget m =
+                    input.readMessage(
+                        com.google.api.apikeys.v2.ApiTarget.parser(), extensionRegistry);
+                if (apiTargetsBuilder_ == null) {
+                  ensureApiTargetsIsMutable();
+                  apiTargets_.add(m);
+                } else {
+                  apiTargetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+            default:
+              {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.api.apikeys.v2.Restrictions) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
 
@@ -2332,7 +2261,18 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Restrictions(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
