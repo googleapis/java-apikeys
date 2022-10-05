@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/googleapis/java-apikeys/compare/v0.1.1...v0.1.2) (2022-10-05)
+
+
+### Bug Fixes
+
+* update protobuf to v3.21.7 ([1ed2299](https://github.com/googleapis/java-apikeys/commit/1ed22992cb36b740c8d42d35cf4c84e96bf808de))
+
 ## [0.1.1](https://github.com/googleapis/java-apikeys/compare/v0.1.0...v0.1.1) (2022-10-03)
 
 
